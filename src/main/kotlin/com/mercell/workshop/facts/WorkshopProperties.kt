@@ -6,5 +6,5 @@ import org.springframework.boot.context.properties.ConstructorBinding
 @ConfigurationProperties("workshop")
 @ConstructorBinding
 data class WorkshopProperties(
-    val fact: String = "I am the default fact"
+    val fact: String = "I am Martin's default fact, which is not very exciting."
 )
