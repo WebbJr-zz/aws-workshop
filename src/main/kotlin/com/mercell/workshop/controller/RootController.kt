@@ -7,7 +7,5 @@ import java.time.LocalDateTime
 class RootController {
 
     @GetMapping("/")
-    fun root(): String {
-        return "Hello workshop! Current time is ${LocalDateTime.now()}"
-    }
+    fun root() = "Hello workshop! Current time is ${LocalDateTime.now()}"
 }
