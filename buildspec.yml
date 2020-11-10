@@ -1,0 +1,30 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      java: openjdk8
+      docker: 18
+  pre_build:
+    commands:
+      - echo Logging in to Amazon ECR...
+      - $(aws ecr get-login --no-include-email --region $AWS_REGION)
+  build:
+    commands:
+      - echo Build started on `date`
+      - echo Building the Gradle artifacts...
+      - chmod +x ./gradlew
+      - ./gradlew build --no-daemon
+      - echo Building the Docker image...
+      - docker build -t $IMAGE_REPO_NAME:$CODEBUILD_BUILD_NUMBER .
+      - docker tag $IMAGE_REPO_NAME:$CODEBUILD_BUILD_NUMBER 236749792102.dkr.ecr.$AWS_REGION.amazonaws.com/$IMAGE_REPO_NAME:$CODEBUILD_BUILD_NUMBER
+  post_build:
+    commands:
+      - echo Build completed on `date`
+      - echo Pushing Docker image...
+      - docker push 236749792102.dkr.ecr.$AWS_REGION.amazonaws.com/$IMAGE_REPO_NAME:$CODEBUILD_BUILD_NUMBER
+      - printf '[{"name":"%s","imageUri":"%s"}]' $IMAGE_REPO_NAME 236749792102.dkr.ecr.$AWS_REGION.amazonaws.com/$IMAGE_REPO_NAME:$CODEBUILD_BUILD_NUMBER > imagedefinitions.json
+
+artifacts:
+  files:
+    - imagedefinitions.json
