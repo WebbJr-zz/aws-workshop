@@ -109,7 +109,7 @@ This is where we define the cluster where our application will run in.
         - **Task CPU (vCPU)**: 0.25vCPU
     4. Container Definitions (Click add container)
         - **Container name**: workshop-<*teamname*>
-        - **Image**: 236749792102.dkr.ecr.eu-central-1.amazonaws.com/workshop-<*teamname*>:latest
+        - **Image**: 236749792102.dkr.ecr.eu-central-1.amazonaws.com/workshop-<*teamname*>:<*buildnr*>
         - **Port mappings**: 
             - Click 'Add port mapping'
             - Write '8080' in the 'Container port' field
