@@ -72,7 +72,7 @@ to ECR.
 *Source*
 - **Source provider**: GitHub
 - **Repository**: Repository in my GitHub account
-- **GitHub repository**: Mercell/deployment-pipeline-workshop
+- **GitHub repository**: Mercell/aws-workshop
 
 *Environment*
 - **Operating system**: Ubuntu
