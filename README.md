@@ -77,7 +77,7 @@ to ECR.
 *Environment*
 - **Operating system**: Ubuntu
 - **Runtime(s)**: Standard
-- **Image**: aws/codebuild/standard:3.0
+- **Image**: aws/codebuild/standard:4.0
 - **Privileged (checkbox)**: Set checked/enabled
 - **Service role**: Existing service role
 - **Role ARN**: codebuild-workshop-demo-service-role
