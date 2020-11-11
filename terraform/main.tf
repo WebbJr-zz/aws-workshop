@@ -14,5 +14,5 @@ provider "aws" {
 }
 
 resource "aws_ecr_repository" "this" {
-  name = "aws-workshop-terraform"
+  name = "aws-workshop-terraform-new"
 }
