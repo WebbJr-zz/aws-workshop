@@ -6,5 +6,5 @@ import org.springframework.boot.context.properties.ConstructorBinding
 @ConfigurationProperties("workshop")
 @ConstructorBinding
 data class WorkshopProperties(
-    val fact: String = "The smallest bone in your body is in your ear"
+    val fact: String = "Not a fact :)"
 )
